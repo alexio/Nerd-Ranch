@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     var currentQuestionIndex: Int = 0
     
     @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var nextQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var answerLabel: UILabel!
     
     @IBAction func showAnswer(sender: AnyObject) {
@@ -54,10 +56,15 @@ class ViewController: UIViewController {
     }
 
     func animateLabelTransition() {
-        UIView.animateWithDuration(0.5, animations: {
-            self.currentQuestionLabel.alpha = 0
-            self.nextQuestionLabel.alpha = 1
-        })
+        UIView.animateWithDuration(0.5,
+                                   delay: 0,
+                                   options: [],
+            animations: {
+                self.currentQuestionLabel.alpha = 0
+                self.nextQuestionLabel.alpha = 1
+            }, completion: { _ in
+                swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
+            })
     }
 }
 
