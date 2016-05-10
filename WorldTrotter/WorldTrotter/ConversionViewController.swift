@@ -81,8 +81,17 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let hasLetters = string.rangeOfCharacterFromSet(letters)
 
         //check if user is adding more than one decimal separator
-        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
-        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
+//        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
+//        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
+        
+        let currentLocale = NSLocale.currentLocale()
+        let decimalSeparator =
+            currentLocale.objectForKey(NSLocaleDecimalSeparator) as! String
+        let existingTextHasDecimalSeparator
+            = textField.text?.rangeOfString(decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.rangeOfString(decimalSeparator)
+        
+        
         let hasExtraDecimalSeparator: Bool = existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil
         
         if hasExtraDecimalSeparator || hasLetters != nil {
@@ -94,8 +103,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func fahrenheitFieldEditingChanged(textField: UITextField) {
-        if let text = textField.text, value = Double(text) {
-            fahrenheitValue = value
+        if let text = textField.text, number = numberFormatter.numberFromString(text) {
+            fahrenheitValue = number.doubleValue
         }
         else {
             fahrenheitValue = nil
