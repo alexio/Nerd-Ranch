@@ -27,11 +27,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi There" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16Q-JY-b3C">
                                 <rect key="frame" x="268" y="62" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqH-JT-NLa">
-                                <rect key="frame" x="253.5" y="244" width="93" height="30"/>
+                                <rect key="frame" x="254" y="244" width="93" height="30"/>
                                 <state key="normal" title="Show Answer"/>
                                 <connections>
                                     <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qj-eA-eOX"/>
@@ -40,7 +40,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkw-cs-j5O">
                                 <rect key="frame" x="288" y="201" width="25" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEU-rd-lNG">
+                                <rect key="frame" x="279" y="62" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -49,16 +55,19 @@
                             <constraint firstItem="aqH-JT-NLa" firstAttribute="top" secondItem="Pkw-cs-j5O" secondAttribute="bottom" constant="22" id="66a-5E-320"/>
                             <constraint firstItem="sIS-60-1k0" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="6eY-BG-KXX"/>
                             <constraint firstItem="16Q-JY-b3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DNQ-si-fI4"/>
+                            <constraint firstItem="LEU-rd-lNG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Db8-ws-fde"/>
                             <constraint firstItem="aqH-JT-NLa" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="Qxy-yr-X0p"/>
                             <constraint firstItem="Pkw-cs-j5O" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="UCt-Mj-H9g"/>
                             <constraint firstItem="sIS-60-1k0" firstAttribute="top" secondItem="16Q-JY-b3C" secondAttribute="bottom" constant="22" id="al8-nI-FMc"/>
                             <constraint firstItem="16Q-JY-b3C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="dKm-HK-S3L"/>
+                            <constraint firstItem="LEU-rd-lNG" firstAttribute="top" secondItem="16Q-JY-b3C" secondAttribute="top" id="pB3-Rt-kgS"/>
                             <constraint firstItem="Pkw-cs-j5O" firstAttribute="top" secondItem="sIS-60-1k0" secondAttribute="bottom" constant="66" id="vrC-BP-CzZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="Pkw-cs-j5O" id="Ebm-fQ-Bad"/>
-                        <outlet property="questionLabel" destination="16Q-JY-b3C" id="8Wz-us-V2K"/>
+                        <outlet property="currentQuestionLabel" destination="16Q-JY-b3C" id="J9S-oD-W75"/>
+                        <outlet property="nextQuestionLabel" destination="LEU-rd-lNG" id="yhk-jg-TJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

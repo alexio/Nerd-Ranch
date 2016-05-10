@@ -18,7 +18,8 @@ class ViewController: UIViewController {
                              "Montpelier"]
     var currentQuestionIndex: Int = 0
     
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     @IBAction func showAnswer(sender: AnyObject) {
@@ -31,18 +32,32 @@ class ViewController: UIViewController {
             currentQuestionIndex = 0
         }
         answerLabel.text = "???"
-        questionLabel.text = questions[currentQuestionIndex]
+        nextQuestionLabel.text = questions[currentQuestionIndex]
+        animateLabelTransition()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = questions[currentQuestionIndex]
+        currentQuestionLabel.text = questions[currentQuestionIndex]
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Set the label's initial alpha
+        nextQuestionLabel.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func animateLabelTransition() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.currentQuestionLabel.alpha = 0
+            self.nextQuestionLabel.alpha = 1
+        })
     }
 }
 
