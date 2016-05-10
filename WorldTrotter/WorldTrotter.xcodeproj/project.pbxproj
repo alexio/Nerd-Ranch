@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6645D0541CE24C7E003E8EA6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6645D0531CE24C7E003E8EA6 /* WebViewController.swift */; };
 		6665ACC81CE10D7D004D658F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665ACC71CE10D7D004D658F /* AppDelegate.swift */; };
 		6665ACCA1CE10D7D004D658F /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665ACC91CE10D7D004D658F /* ConversionViewController.swift */; };
 		6665ACCD1CE10D7D004D658F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6665ACCB1CE10D7D004D658F /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6645D0531CE24C7E003E8EA6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ../WebViewController.swift; sourceTree = "<group>"; };
 		6665ACC41CE10D7D004D658F /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6665ACC71CE10D7D004D658F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6665ACC91CE10D7D004D658F /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		6665ACC61CE10D7D004D658F /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
+				6645D0531CE24C7E003E8EA6 /* WebViewController.swift */,
 				6665ACC71CE10D7D004D658F /* AppDelegate.swift */,
 				6665ACF51CE16077004D658F /* MapViewController.swift */,
 				6665ACC91CE10D7D004D658F /* ConversionViewController.swift */,
@@ -266,6 +269,7 @@
 				6665ACCA1CE10D7D004D658F /* ConversionViewController.swift in Sources */,
 				6665ACF61CE16077004D658F /* MapViewController.swift in Sources */,
 				6665ACC81CE10D7D004D658F /* AppDelegate.swift in Sources */,
+				6645D0541CE24C7E003E8EA6 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
