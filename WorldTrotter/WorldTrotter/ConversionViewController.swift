@@ -35,9 +35,19 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         nf.maximumFractionDigits = 2
         return nf
     }()
+    
+    let backgroundColors: [UIColor] = [UIColor.orangeColor(),
+                                       UIColor.lightGrayColor(),
+                                       UIColor.blueColor(),
+                                       UIColor.darkGrayColor(),
+                                       UIColor.cyanColor(),
+                                       UIColor.greenColor(),
+                                       UIColor.redColor()]
+    var currentBackgroundColorIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ConversionViewController loaded its view.")
         // Do any additional setup after loading the view, typically from a nib.
 //        let firstFrame = CGRect(x: 160, y: 240, width: 100, height: 150)
 //        let firstView = UIView(frame: firstFrame)
@@ -54,6 +64,14 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
 //        <#code#>
 //    }
     
+    override func viewWillAppear(animated: Bool) {
+        currentBackgroundColorIndex += 1
+        if (currentBackgroundColorIndex >= backgroundColors.count) {
+            currentBackgroundColorIndex = 0
+        }
+    
+        view.backgroundColor = backgroundColors[currentBackgroundColorIndex]
+    }
     
     func textField(textField: UITextField,shouldChangeCharactersInRange range: NSRange,replacementString string: String) -> Bool {
         print("Current text: \(textField.text)")
@@ -101,7 +119,5 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
