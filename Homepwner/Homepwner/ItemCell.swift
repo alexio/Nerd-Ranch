@@ -13,6 +13,17 @@ class ItemCell: UITableViewCell {
     @IBOutlet var serialNumberLabel: UILabel!
     @IBOutlet var valueLabel: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if editing {
+            valueLabel.alpha = 0
+        } else {
+            valueLabel.alpha = 1
+        }
+    }
+    
+    
     func updateLabels() {
         let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         nameLabel.font = bodyFont
