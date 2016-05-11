@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6645D0541CE24C7E003E8EA6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6645D0531CE24C7E003E8EA6 /* WebViewController.swift */; };
+		6646FFA81CE3002800E42354 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6646FFAA1CE3002800E42354 /* Localizable.strings */; };
 		6665ACC81CE10D7D004D658F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665ACC71CE10D7D004D658F /* AppDelegate.swift */; };
 		6665ACCA1CE10D7D004D658F /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665ACC91CE10D7D004D658F /* ConversionViewController.swift */; };
 		6665ACCD1CE10D7D004D658F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6665ACCB1CE10D7D004D658F /* Main.storyboard */; };
@@ -38,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		6645D0531CE24C7E003E8EA6 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ../WebViewController.swift; sourceTree = "<group>"; };
+		6645D07A1CE2FA7B003E8EA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6645D07B1CE2FB64003E8EA6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		6646FFA91CE3002800E42354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6646FFAB1CE3002B00E42354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6646FFAC1CE3002C00E42354 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6665ACC41CE10D7D004D658F /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6665ACC71CE10D7D004D658F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6665ACC91CE10D7D004D658F /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				6665ACC71CE10D7D004D658F /* AppDelegate.swift */,
 				6665ACF51CE16077004D658F /* MapViewController.swift */,
 				6665ACC91CE10D7D004D658F /* ConversionViewController.swift */,
+				6646FFAA1CE3002800E42354 /* Localizable.strings */,
 				6665ACCB1CE10D7D004D658F /* Main.storyboard */,
 				6665ACCE1CE10D7D004D658F /* Assets.xcassets */,
 				6665ACD01CE10D7D004D658F /* LaunchScreen.storyboard */,
@@ -221,6 +228,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 6665ACBB1CE10D7D004D658F;
 			productRefGroup = 6665ACC51CE10D7D004D658F /* Products */;
@@ -240,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6665ACD21CE10D7D004D658F /* LaunchScreen.storyboard in Resources */,
+				6646FFA81CE3002800E42354 /* Localizable.strings in Resources */,
 				6665ACCF1CE10D7D004D658F /* Assets.xcassets in Resources */,
 				6665ACCD1CE10D7D004D658F /* Main.storyboard in Resources */,
 			);
@@ -305,10 +314,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6646FFAA1CE3002800E42354 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6646FFA91CE3002800E42354 /* Base */,
+				6646FFAB1CE3002B00E42354 /* en */,
+				6646FFAC1CE3002C00E42354 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6665ACCB1CE10D7D004D658F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6665ACCC1CE10D7D004D658F /* Base */,
+				6645D07A1CE2FA7B003E8EA6 /* en */,
+				6645D07B1CE2FB64003E8EA6 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

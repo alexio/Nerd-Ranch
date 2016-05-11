@@ -136,11 +136,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fyk-ii-luW" firstAttribute="leading" secondItem="SwK-WI-Hho" secondAttribute="leadingMargin" id="14s-zG-Znz"/>
                             <constraint firstItem="fyk-ii-luW" firstAttribute="top" secondItem="DTq-Pw-wG2" secondAttribute="bottom" id="IDJ-xm-y1U"/>
                             <constraint firstItem="fyk-ii-luW" firstAttribute="leading" secondItem="SwK-WI-Hho" secondAttribute="leading" id="JU6-8T-R4j"/>
                             <constraint firstAttribute="trailing" secondItem="fyk-ii-luW" secondAttribute="trailing" id="LFX-QA-Ux9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fyk-ii-luW" secondAttribute="trailing" id="cVV-Xp-i2G"/>
                             <constraint firstItem="Fvm-C2-0G7" firstAttribute="top" secondItem="fyk-ii-luW" secondAttribute="bottom" id="lNE-iK-Y0g"/>
                             <constraint firstItem="Fvm-C2-0G7" firstAttribute="top" secondItem="fyk-ii-luW" secondAttribute="bottom" id="m8X-Ot-dlI"/>
                             <constraint firstItem="fyk-ii-luW" firstAttribute="top" secondItem="DTq-Pw-wG2" secondAttribute="bottom" id="nYL-Rc-H7Q"/>
