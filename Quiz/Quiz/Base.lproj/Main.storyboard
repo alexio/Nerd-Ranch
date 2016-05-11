@@ -53,13 +53,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aqH-JT-NLa" firstAttribute="top" secondItem="Pkw-cs-j5O" secondAttribute="bottom" constant="22" id="66a-5E-320"/>
-                            <constraint firstItem="sIS-60-1k0" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="6eY-BG-KXX"/>
                             <constraint firstItem="16Q-JY-b3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DNQ-si-fI4"/>
                             <constraint firstItem="LEU-rd-lNG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Db8-ws-fde"/>
-                            <constraint firstItem="aqH-JT-NLa" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="Qxy-yr-X0p"/>
-                            <constraint firstItem="Pkw-cs-j5O" firstAttribute="centerX" secondItem="16Q-JY-b3C" secondAttribute="centerX" id="UCt-Mj-H9g"/>
-                            <constraint firstItem="sIS-60-1k0" firstAttribute="top" secondItem="16Q-JY-b3C" secondAttribute="bottom" constant="22" id="al8-nI-FMc"/>
+                            <constraint firstItem="aqH-JT-NLa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bGN-SE-OUc"/>
+                            <constraint firstItem="sIS-60-1k0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8a-wL-Yyl"/>
                             <constraint firstItem="16Q-JY-b3C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="dKm-HK-S3L"/>
+                            <constraint firstItem="sIS-60-1k0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="kg0-cA-fcB"/>
+                            <constraint firstItem="Pkw-cs-j5O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lyR-Lq-Blh"/>
                             <constraint firstItem="LEU-rd-lNG" firstAttribute="top" secondItem="16Q-JY-b3C" secondAttribute="top" id="pB3-Rt-kgS"/>
                             <constraint firstItem="Pkw-cs-j5O" firstAttribute="top" secondItem="sIS-60-1k0" secondAttribute="bottom" constant="66" id="vrC-BP-CzZ"/>
                         </constraints>
@@ -67,7 +67,9 @@
                     <connections>
                         <outlet property="answerLabel" destination="Pkw-cs-j5O" id="Ebm-fQ-Bad"/>
                         <outlet property="currentQuestionLabel" destination="16Q-JY-b3C" id="J9S-oD-W75"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="DNQ-si-fI4" id="8rm-iD-Q8h"/>
                         <outlet property="nextQuestionLabel" destination="LEU-rd-lNG" id="yhk-jg-TJw"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="Db8-ws-fde" id="WaH-Kh-h0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

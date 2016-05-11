@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentQuestionLabel.text = questions[currentQuestionIndex]
         // Do any additional setup after loading the view, typically from a nib.
+        updateOffScreenLabel()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,15 +57,33 @@ class ViewController: UIViewController {
     }
 
     func animateLabelTransition() {
+        
+        // Force any outstanding layout changes to occur
+        view.layoutIfNeeded()
+
+        //Animate the alpha
+        // and the center X constraints
+        let screenWidth = view.frame.width
+        self.nextQuestionLabelCenterXConstraint.constant = 0
+        self.currentQuestionLabelCenterXConstraint.constant += screenWidth
+        
         UIView.animateWithDuration(0.5,
                                    delay: 0,
-                                   options: [],
+                                   options: [.CurveLinear],
             animations: {
                 self.currentQuestionLabel.alpha = 0
                 self.nextQuestionLabel.alpha = 1
+                self.view.layoutIfNeeded()
             }, completion: { _ in
                 swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
+                swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
+                self.updateOffScreenLabel()
             })
+    }
+    
+    func updateOffScreenLabel() {
+        let screenWidth = view.frame.width
+        nextQuestionLabelCenterXConstraint.constant = -screenWidth
     }
 }
 
