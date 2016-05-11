@@ -10,13 +10,14 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
 
-    var itemStore: ItemStore!
+    var firstSectionItemStore: ItemStore!
+    var secondSectionItemStore: ItemStore!
     
     @IBAction func addNewItem(sender: AnyObject) {
         // Create a new item and add it to the store
-        let newItem = itemStore.createItem()
+        let newItem = firstSectionItemStore.createItem()
         // Figure out where that item is in the array
-        if let index = itemStore.allItems.indexOf(newItem) {
+        if let index = firstSectionItemStore.allItems.indexOf(newItem) {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             // Insert this new row into the table
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -56,9 +57,43 @@ class ItemsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if ( section == 0) {
+            return "First Section"
+        } else {
+            return "Second Section"
+        }
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section != 1 {
+            return nil
+        }
+        
+        let view = UIView()
+        
+        let version = UILabel(frame: CGRectMake(8, 15, tableView.frame.width, 30))
+        version.font = version.font.fontWithSize(14)
+        version.text = "No More Items!"
+        version.textColor = UIColor.lightGrayColor()
+        version.textAlignment = .Center;
+        
+        view.addSubview(version)
+        
+        return view
+    }
+    
+    private func getSectionStore(sectionIndex: Int) -> ItemStore {
+        return sectionIndex == 0 ? firstSectionItemStore : secondSectionItemStore;
+    }
+    
     override func tableView(tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count
+        return getSectionStore(section).allItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,7 +102,9 @@ class ItemsViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-        let item = itemStore.allItems[indexPath.row]
+        print("SectionIndex: " + indexPath.section.description)
+        print("RowIndex: " + indexPath.row.description)
+        let item = getSectionStore(indexPath.section).allItems[indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         return cell
@@ -76,6 +113,8 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView,commitEditingStyle editingStyle: UITableViewCellEditingStyle,
                             forRowAtIndexPath indexPath: NSIndexPath) {
         // If the table view is asking to commit a delete command...
+        let itemStore: ItemStore = getSectionStore(indexPath.section)
+        
         if editingStyle == .Delete {
             let item = itemStore.allItems[indexPath.row]
             
@@ -90,7 +129,7 @@ class ItemsViewController: UITableViewController {
             let deleteAction = UIAlertAction(title: "Delete", style: .Destructive,
                                              handler: { (action) -> Void in
                                                 // Remove the item from the store 
-                                                self.itemStore.removeItem(item)
+                                                itemStore.removeItem(item)
                                                 // Also remove that row from the table view with an animation
                                                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic) })
             ac.addAction(deleteAction)
@@ -103,8 +142,11 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView,
                             moveRowAtIndexPath sourceIndexPath: NSIndexPath,
                                                toIndexPath destinationIndexPath: NSIndexPath) {
-        // Update the model
-        itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        let sourceStore = getSectionStore(sourceIndexPath.section);
+        let destinationStore = getSectionStore(destinationIndexPath.section)
+            
+        let item: Item = sourceStore.allItems.removeAtIndex(sourceIndexPath.row)
+        destinationStore.allItems.insert(item, atIndex: destinationIndexPath.row)
     }
 }
 
