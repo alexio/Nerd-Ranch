@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="276-tu-sNr">
-                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <rect key="frame" x="20" y="72" width="560" height="476"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WWl-Bh-yBF">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
@@ -155,7 +155,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-CY-jim">
-                                        <rect key="frame" x="0.0" y="143" width="560" height="378"/>
+                                        <rect key="frame" x="0.0" y="143" width="560" height="334"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -163,14 +163,30 @@
                                     <constraint firstItem="oI0-IC-acK" firstAttribute="leading" secondItem="fSK-5Z-HjZ" secondAttribute="leading" id="Qha-mx-50J"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idt-WB-ioT">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sdm-KZ-xiS"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="HNm-Xf-fyp">
+                                        <connections>
+                                            <action selector="takePicture:" destination="cxX-hN-as9" id="H4m-q4-tc3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Idt-WB-ioT" firstAttribute="leading" secondItem="lyb-oE-QWO" secondAttribute="leading" id="5wq-Dq-z8Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Idt-WB-ioT" secondAttribute="trailing" id="79C-Y0-UK6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="276-tu-sNr" secondAttribute="trailing" id="BaN-61-jsD"/>
                             <constraint firstItem="276-tu-sNr" firstAttribute="top" secondItem="VGA-oP-VBW" secondAttribute="bottom" constant="8" id="Hoz-82-OFK"/>
                             <constraint firstItem="276-tu-sNr" firstAttribute="leading" secondItem="lyb-oE-QWO" secondAttribute="leadingMargin" id="Ydh-3F-w2t"/>
-                            <constraint firstItem="Vsb-rJ-qEW" firstAttribute="top" secondItem="276-tu-sNr" secondAttribute="bottom" constant="8" id="uZo-gh-drO"/>
+                            <constraint firstItem="Vsb-rJ-qEW" firstAttribute="top" secondItem="Idt-WB-ioT" secondAttribute="bottom" id="gaD-h3-EY2"/>
+                            <constraint firstItem="Idt-WB-ioT" firstAttribute="top" secondItem="276-tu-sNr" secondAttribute="bottom" constant="8" id="kx7-7T-Qkh"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="QHT-4J-mW6" appends="YES" id="Czr-e6-ZeR"/>
