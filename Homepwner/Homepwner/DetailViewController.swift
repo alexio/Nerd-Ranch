@@ -73,6 +73,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - View life cycl
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         nameField.text = item.name
