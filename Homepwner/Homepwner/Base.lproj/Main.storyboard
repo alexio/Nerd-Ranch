@@ -148,12 +148,15 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-7c-WP7">
-                                        <rect key="frame" x="0.0" y="114" width="560" height="406"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-7c-WP7">
+                                        <rect key="frame" x="0.0" y="114" width="560" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-CY-jim">
+                                        <rect key="frame" x="0.0" y="143" width="560" height="378"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="oI0-IC-acK" firstAttribute="leading" secondItem="vd2-qW-bBS" secondAttribute="leading" id="N9I-ad-URZ"/>
@@ -175,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="gxf-7c-WP7" id="t7J-p6-HwS"/>
+                        <outlet property="imageView" destination="E4s-CY-jim" id="tZr-AI-P5J"/>
                         <outlet property="nameField" destination="oI0-IC-acK" id="uvZ-8R-kg1"/>
                         <outlet property="serialNumberField" destination="vd2-qW-bBS" id="3DO-jy-jZC"/>
                         <outlet property="valueField" destination="fSK-5Z-HjZ" id="2og-FE-fSg"/>
