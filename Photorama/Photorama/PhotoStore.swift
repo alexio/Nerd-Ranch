@@ -6,7 +6,16 @@
 //  Copyright © 2016 Big Nerd Ranch. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum ImageResult {
+    case Success(UIImage)
+    case Failure(ErrorType)
+}
+
+enum PhotoError : ErrorType {
+    case ImageCreationError
+}
 
 class PhotoStore {
     
@@ -30,6 +39,38 @@ class PhotoStore {
             return .Failure(error!)
         }
         return FlickrAPI.photosFromJSONData(jsonData)
+    }
+    
+    func fetchImageForPhoto(photo: Photo, completion: (ImageResult) -> ()) {
+        let url = photo.remoteURL
+        let request = NSURLRequest(URL: url)
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            let result: ImageResult = self.processImageRequest(data: data, error: error)
+            
+            if case let .Success(image) = result {
+                photo.image = image
+            }
+            
+            completion(result)
+        })
+        task.resume()
+    }
+    
+    func processImageRequest(data data: NSData?, error: NSError?) -> ImageResult{
+        guard let
+            imageData = data,
+            image = UIImage(data: imageData) else {
+                // Couldn't create an image
+                if data == nil {
+                    return .Failure(error!)
+                }
+                else {
+                    return .Failure(PhotoError.ImageCreationError)
+                }
+        }
+        
+        return .Success(image)
     }
 }
 
