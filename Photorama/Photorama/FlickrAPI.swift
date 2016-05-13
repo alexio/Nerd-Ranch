@@ -28,11 +28,11 @@ struct FlickrAPI {
     private static let APIKey = "a6d819499131071f158fd740860a5a88"
     
     static func interestingPhotosURL() -> NSURL {
-        return flickrURL(method: .InterestingPhotos, parameters: ["extras": "url_h,date_taken"])
+        return flickrURL(method: .InterestingPhotos, parameters: ["extras": "url_c, date_taken"])
     }
     
     static func recentPhotosUrl() -> NSURL {
-        return flickrURL(method: .RecentPhotos, parameters: ["extras": "url_h,date_taken"])
+        return flickrURL(method: .RecentPhotos, parameters: ["extras": "url_c, date_taken"])
     }
     
     
@@ -109,7 +109,7 @@ struct FlickrAPI {
             photoID = json["id"] as? String,
             title = json["title"] as? String,
             dateString = json["datetaken"] as? String,
-            photoURLString = json["url_h"] as? String,
+            photoURLString = json["url_c"] as? String,
             url = NSURL(string: photoURLString),
             dateTaken = dateFormatter.dateFromString(dateString) else {
                 // Don't have enough information to construct a Photo
