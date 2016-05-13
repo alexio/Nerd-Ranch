@@ -24,8 +24,17 @@ class PhotoStore {
         return NSURLSession(configuration: config)
     }()
 
-    func fetchInterestingPhotos(completion completion: (photos: PhotosResult) -> ()) {
+    func fetchInterestingPhotos(completion: (photos: PhotosResult) -> ()) {
         let url = FlickrAPI.interestingPhotosURL()
+        fetchPhotos(url, completion: completion)
+    }
+    
+    func fetchRecentPhotos(completion: (photos: PhotosResult) -> ()) {
+        let url = FlickrAPI.recentPhotosUrl()
+        fetchPhotos(url, completion: completion)
+    }
+    
+    private func fetchPhotos(url: NSURL, completion: (photos: PhotosResult) -> ()) {
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request, completionHandler:  { (data, response, error) -> Void in
             let results = self.processPhotosRequest(data: data, error: error)
@@ -46,6 +55,12 @@ class PhotoStore {
         let request = NSURLRequest(URL: url)
         
         let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            print("Fetched photo")
+            let httpResponse = response as! NSHTTPURLResponse
+            print(httpResponse.statusCode)
+            print(httpResponse.allHeaderFields)
+            
+            
             let result: ImageResult = self.processImageRequest(data: data, error: error)
             
             if case let .Success(image) = result {

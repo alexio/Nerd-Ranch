@@ -10,6 +10,7 @@ import Foundation
 
 enum Method: String {
     case InterestingPhotos = "flickr.interestingness.getList"
+    case RecentPhotos = "flickr.photos.getRecent"
 }
 
 enum PhotosResult {
@@ -29,6 +30,11 @@ struct FlickrAPI {
     static func interestingPhotosURL() -> NSURL {
         return flickrURL(method: .InterestingPhotos, parameters: ["extras": "url_h,date_taken"])
     }
+    
+    static func recentPhotosUrl() -> NSURL {
+        return flickrURL(method: .RecentPhotos, parameters: ["extras": "url_h,date_taken"])
+    }
+    
     
     private static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
