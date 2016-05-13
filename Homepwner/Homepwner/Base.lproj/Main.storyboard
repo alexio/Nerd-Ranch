@@ -107,11 +107,17 @@
                                                         <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="53" y="0.0" width="223" height="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <outlet property="delegate" destination="cxX-hN-as9" id="7Bf-zy-54w"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="30"/>
+                                                </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CpY-AM-c2Q">
                                                 <rect key="frame" x="0.0" y="38" width="560" height="30"/>
@@ -126,11 +132,17 @@
                                                         <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="53" y="0.0" width="223" height="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <outlet property="delegate" destination="cxX-hN-as9" id="UpF-Pj-H17"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="38" width="276" height="30"/>
+                                                </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cAK-UU-iyP">
                                                 <rect key="frame" x="0.0" y="76" width="560" height="30"/>
@@ -145,29 +157,38 @@
                                                         <rect key="frame" x="53" y="0.0" width="507" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <variation key="heightClass=compact" misplaced="YES">
+                                                            <rect key="frame" x="53" y="0.0" width="223" height="30"/>
+                                                        </variation>
                                                         <connections>
                                                             <outlet property="delegate" destination="cxX-hN-as9" id="9T7-Ez-D1g"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="76" width="276" height="30"/>
+                                                </variation>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-7c-WP7">
                                                 <rect key="frame" x="0.0" y="114" width="560" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="114" width="276" height="162"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="oI0-IC-acK" firstAttribute="leading" secondItem="vd2-qW-bBS" secondAttribute="leading" id="N9I-ad-URZ"/>
                                             <constraint firstItem="oI0-IC-acK" firstAttribute="leading" secondItem="fSK-5Z-HjZ" secondAttribute="leading" id="Qha-mx-50J"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="276"/>
-                                        </variation>
                                     </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-CY-jim">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4s-CY-jim">
                                         <rect key="frame" x="0.0" y="143" width="560" height="334"/>
+                                        <variation key="heightClass=compact" misplaced="YES">
+                                            <rect key="frame" x="284" y="0.0" width="276" height="276"/>
+                                        </variation>
                                     </imageView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
